@@ -25,7 +25,7 @@ const shopItem = (req, res) => {
 }
 
 const shopCart = (req, res) => {
-    res.render("shopCart", {title: "Funko Shop - Carrito"})
+    res.render("shopCart", {title: "Funko Shop - Carrito", producto: productos[2]})
 }
 
 const controller = {

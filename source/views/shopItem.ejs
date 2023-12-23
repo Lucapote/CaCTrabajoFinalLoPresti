@@ -17,7 +17,7 @@
 
                 <div id="shopItemContainerBtnCantidad"> 
                     <label for="cantidadItem" aria-label="Cantidad">
-                        <input type="number" name="cantidadItem" id="cantidadItem" value="0">
+                        <input type="number" name="cantidadItem" id="cantidadItem" value="1">
                     </label>
                     <div id="btnItemCantContainer">
                         <button class="botonCantidad">+</button>
@@ -27,7 +27,7 @@
                 </div>
                 <a href="" class="shopItemCuotas"><span style="text-decoration:underline;">Ver métodos de pago</span> - <%= infoProducto.dues %> CUOTAS SIN INTERÉS</a>
             </div>
-        </div>        
+        </div>
 
         <%-include("partials/carrusel", {claseCarrusel: "tituloProductosRelacionados", tituloH2: "Productos Relacionados"})%>
     </main>
