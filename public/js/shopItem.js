@@ -54,8 +54,6 @@ const rectificar = ()=>{
     calcularTotal();
 }
 
-//ejecutamos para que se actualicen los valores
-rectificar();
 
 //suma o resta botones
 //suma
@@ -86,4 +84,6 @@ const cambiarImg = (img, urlNueva) => {
 const imgOriginal = (img, urlPrincipal) => {
     img.src = urlPrincipal;
 }
-  
+
+//ejecutamos para que se actualicen los valores
+rectificar();
