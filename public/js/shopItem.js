@@ -6,21 +6,52 @@ const botonCantidad = document.getElementsByClassName("botonCantidad")
 const cantidadElementos = document.querySelector("#cantidadElementos");
 
 //calcular total
-const calcularTotal = ()=>{
+const calcularSubtotal = ()=>{
     const precioProdcuto = document.querySelector("#precioProducto").textContent;
     const cantidadItem = document.querySelector("#cantidadItem").value;
     const total = cantidadItem * precioProdcuto;
     document.querySelectorAll(".subtotalCuenta")[0].textContent = `$${total}`;
     document.querySelectorAll(".subtotalCuenta")[1].textContent = `$${total}`;
+    return total;
 }
 
 const cuantosVan = ()=>{
     cantidadElementos.textContent = cantidadItem.value;
 }
 
+//costo envio
+const costoEnvio = ()=> {
+    const envioStatus = document.querySelector("#envioStatus")
+    const envioPrecio = document.querySelector("#envioPrecio")
+    const subtotal = calcularSubtotal();
+    let totalEnvio;
+
+    if(subtotal > 5000){
+        envioStatus.textContent = "Envio Gratuito"
+        envioPrecio.textContent = "$0"
+        return totalEnvio = 0;
+    }else{
+        envioStatus.textContent = "Envio gratis a partir de $5000"
+        envioPrecio.textContent = "$1500.00"
+        return totalEnvio = 1500;
+    }
+}
+
+//calcular total
+const calcularTotal = ()=>{
+    const precioTotal = document.querySelector("#precioTotal");
+    const subtotal = calcularSubtotal();
+    const envioValor = costoEnvio();
+    const total = subtotal + envioValor;
+
+    precioTotal.textContent = `$${total}`;
+}
+
 const rectificar = ()=>{
-    calcularTotal();
+    calcularSubtotal();
     cuantosVan();
+    costoEnvio();
+    calcularTotal();
 }
 
 //ejecutamos para que se actualicen los valores
@@ -55,3 +86,4 @@ const cambiarImg = (img, urlNueva) => {
 const imgOriginal = (img, urlPrincipal) => {
     img.src = urlPrincipal;
 }
+  

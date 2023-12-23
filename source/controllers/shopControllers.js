@@ -1,4 +1,5 @@
 import { productos } from "../data/informacion.js";
+import { generarNumeroAleatorio } from "../../public/js/numeroRandom.js";
 
 const shop = (req, res) => {
     res.render("shop", {title: "Shop", productos})
@@ -25,7 +26,7 @@ const shopItem = (req, res) => {
 }
 
 const shopCart = (req, res) => {
-    res.render("shopCart", {title: "Funko Shop - Carrito", producto: productos[2]})
+    res.render("shopCart", {title: "Funko Shop - Carrito", producto: productos[generarNumeroAleatorio()]})
 }
 
 const controller = {
