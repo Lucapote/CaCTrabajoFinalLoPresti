@@ -4,11 +4,36 @@
 <body>
     <%-include("partials/navbar")%>
     <main>
+        <div id="shopContainer">
+            <div id="shopItemImg">
+                <img src=<%=infoProducto.img_front%> alt="Imagen de Producto" onmouseover="cambiarImg(this, '<%=infoProducto.img_back%>')" onmouseout="imgOriginal(this, '<%=infoProducto.img_front%>')">
+            </div>
+
+            <div id="shopItemInfo">
+                <p><%=infoProducto.licence_name%></p>
+                <h1><%=infoProducto.product_name%></h1>
+                <p><%=infoProducto.product_description%> de <%=infoProducto.product_name%></p>
+                <p>$<%=infoProducto.product_price%></p>
+
+                <div id="shopItemContainerBtnCantidad"> 
+                    <label for="cantidadItem" aria-label="Cantidad">
+                        <input type="number" name="cantidadItem" id="cantidadItem" value="0">
+                    </label>
+                    <div id="btnItemCantContainer">
+                        <button class="botonCantidad">+</button>
+                        <button class="botonCantidad">-</button>
+                    </div>
+                    <button class="btnAgregarCarrito">Agregar al carrito</button>
+                </div>
+                <a href="" class="shopItemCuotas"><span style="text-decoration:underline;">Ver métodos de pago</span> - <%= infoProducto.dues %> CUOTAS SIN INTERÉS</a>
+            </div>
+        </div>        
 
         <%-include("partials/carrusel", {claseCarrusel: "tituloProductosRelacionados", tituloH2: "Productos Relacionados"})%>
     </main>
 
     <%-include("partials/footer")%>
     <script src="/js/carrusel.js"></script>
+    <script src="/js/shopItem.js"></script>
 </body>
 </html>

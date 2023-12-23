@@ -356,7 +356,7 @@ input::-webkit-inner-spin-button {
 }
 
 
-.btnItemCant {
+.botonCantidad {
     display: flex;
     margin: 0 0 4px 10px;
     width: 18px;
@@ -369,7 +369,7 @@ input::-webkit-inner-spin-button {
     border: 0;
 }
 
-.btnItemCant:hover {
+.botonCantidad:hover {
     background-color: #FF3333;
 }
 
