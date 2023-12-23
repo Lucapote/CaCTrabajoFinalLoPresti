@@ -24,8 +24,12 @@ const shopItem = (req, res) => {
 
 }
 
+const shopCart = (req, res) => {
+    res.render("shopCart", {title: "Funko Shop - Carrito"})
+}
+
 const controller = {
-    shop, shopItem
+    shop, shopItem, shopCart
 };
 
 export default controller;

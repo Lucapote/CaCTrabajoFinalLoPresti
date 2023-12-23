@@ -384,6 +384,11 @@ input::-webkit-inner-spin-button {
     border: 0;
 }
 
+.btnAgregarCarrito a{
+    color: white;
+    text-decoration: none;
+}
+
 .btnAgregarCarrito:hover {
     color: white;
     background-color: #30343f;
