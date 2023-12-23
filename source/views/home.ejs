@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include("partials/head")%>
+<body>
+    <%-include("partials/navbar")%>
+
+    <main>
+        <div class="nuevosIngresos">
+            <h1>Nuevos Ingresos</h1>
+            <p>Descubri el proximo Funko Pop de tu coleccion</p>
+            <a href="shop" class="nuevosIngresosButton">SHOP</a>
+        </div>
+    </main>
+
+    <section>
+        <%for(const familia of colecciones) {%>
+            <article class="coleccionContainer">
+                <div>
+                    <h2 class="tituloColeccion"><%=familia.nombre%></h2>
+                    <p class="descripcionColeccion"><%=familia.descripcion%></p>
+                    <hr class="hrColeccion">
+                    <a href="shop" class="buttonColeccion">VER COLECCION</a>
+                </div>
+                <picture>
+                    <img src=<%= familia.img %> width="300px" alt="Imagen de la familia">
+                </picture>
+            </article>
+        <%}%>
+    </section>
+
+    <%-include("partials/carrusel", {claseCarrusel: "tituloColeccion", tituloH2: "Ultimos Lanzamientos"})%>
+
+    <%-include("partials/footer")%>
+
+    <script src="/js/carrusel.js"></script>
+</body>
+</html>

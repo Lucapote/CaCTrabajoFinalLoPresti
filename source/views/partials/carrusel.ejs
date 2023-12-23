@@ -1,0 +1,12 @@
+<section class="ultimosLanzamientos">
+    <h2 class=<%=claseCarrusel%>><%=tituloH2%></h2>
+    <div class="carrusel">
+        <ul class="tarjeta">
+            <%for(const item of productos){%>
+                <article class="producto">
+                    <%-include("tarjetaProducto", {item})%>
+                </article>
+            <%}%>
+        </ul>
+    </div>        
+</section>
